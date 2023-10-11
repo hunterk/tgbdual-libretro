@@ -135,6 +135,7 @@ void retro_init(void)
 void retro_deinit(void)
 {
    libretro_supports_bitmasks          = false;
+   free(my_av_info);
 }
 
 static void check_variables(void)
@@ -405,7 +406,6 @@ void retro_unload_game(void)
          render[i] = NULL;
       }
    }
-   free(my_av_info);
    libretro_supports_persistent_buffer = false;
 }
 
